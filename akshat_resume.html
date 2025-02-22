@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akshat Puri Goswami - Cybersecurity Resume</title>
+    <style>
+
+/* Navigation Bar Styling */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    text-align: center;
+    z-index: 1000;
+    transform: translateY(-100px);
+    animation: slideDown 1s ease-out forwards;
+}
+
+/* Nav List */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* Nav Items */
+nav ul li {
+    display: inline-block;
+    position: relative;
+}
+
+/* Nav Links */
+nav ul li a {
+    color: #64b5f6;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+    position: relative;
+}
+
+/* Animated Underline Effect */
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: #64b5f6;
+    transition: width 0.4s ease, left 0.4s ease;
+}
+
+/* On Hover, Expand Underline */
+nav ul li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* On Hover, Change Text Color */
+nav ul li a:hover {
+    color: #ffffff;
+}
+
+/* Page padding to avoid content hiding behind navbar */
+body {
+    padding-top: 70px;
+}
+
+/* Navigation Animation */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1c2833, #283747);
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        header {
+            text-align: center;
+            padding: 100px 20px;
+            background: rgba(0, 0, 0, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        header p {
+            font-size: 1.2em;
+            opacity: 0.8;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        .section {
+            padding: 80px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #64b5f6;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease-out;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .skill {
+            background: linear-gradient(135deg, #37474f, #263238);
+            padding: 20px 30px;
+            border-radius: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .skill:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .experience-item, .project-item {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .experience-item:hover, .project-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+        }
+
+        .experience-item h3, .project-item h3 {
+            color: #64b5f6;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: rgba(0, 0, 0, 0.4);
+            animation: fadeInUp 1s ease-out;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Background effects */
+        header::before, .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+            pointer-events: none;
+        }
+
+        /* Scroll animations */
+        .section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+
+        .section.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <body>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <!-- <li><a href="#experience">Experience</a></li> -->
+                <li><a href="#Education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    
+    <header>
+        <h1>Akshat Puri Goswami</h1>
+        <p>Cybersecurity Professional</p>
+    </header>
+
+    <section id="about" class="section">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>I am Akshat Puri Goswami, a passionate cybersecurity enthusiast with a strong interest in Ethical Hacking and Red Teaming. Currently pursuing a degree of BCA in Cybersecurity course at Jaipur National University. I am dedicated to building a career in this field and aiming to launch my own startup.</p>
+        </div>
+    </section>
+
+    <section id="skills" class="section">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills-list">
+                <div class="skill">Penetration Testing</div>
+                <div class="skill">Cybersecurity</div>
+                <div class="skill">Computer Networks</div>
+                <div class="skill">Python Language</div>
+                <div class="skill">C Language</div>
+                <div class="skill">Kali Linux</div>
+                <div class="skill">Problem Solving</div>
+            </div>
+        </div>
+    </section>
+
+    <!--
+
+    </body>
+    <section id="experience" class="section">
+        <div class="container">
+            <h2>Experience</h2>
+            <div class="experience-item">
+                <h3>Cybersecurity Intern</h3>
+                <p>XYZ Security Solutions - [Dates]</p>
+                <p>Conducted vulnerability scans, assisted in incident response, and contributed to security audits.</p>
+            </div>
+            <div class="experience-item">
+                <h3>Freelance Penetration Tester</h3>
+                <p>Various Clients - [Dates]</p>
+                <p>Performed penetration testing on web applications and networks, providing detailed reports and recommendations.</p>
+            </div>
+        </div>
+    </section>
+
+    -->
+
+    <section id="Education" class="section">
+        <div class="container">
+            <h2>Education</h2>
+            <div class="project-item">
+                <h3>High School</h3>
+                <p>Vidhya Kunj Sr. Secondary English Medium School: PCM</p>
+            </div>
+            <div class="project-item">
+                <h3>Graduation</h3>
+                <p>Jaipur National University</p>
+            </div>
+            <div class="project-item">
+                <h3>Course</h3>
+                <p>BCA-Cybersecurity | CGPA: 8.7</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2>Contact</h2>
+            <h3>Email: akshatgoswami2006@gmail.com<h3>
+            <h3><a href="https://www.linkedin.com/in/akshat-puri-goswami-545ba0281/">LinkedIn</a></h3>
+            <h3>Adress: Jaipur, Rajasthan</h3>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Akshat Puri Goswami</p>
+    </footer>
+
+    <script>
+        const sections = document.querySelectorAll('.section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
