@@ -57,12 +57,88 @@ nav {
 }
 
 /* Responsive Navigation Fix */
-@media screen and (max-width: 768px) {
-    nav ul {
-        flex-direction: column; /* Stack items vertically */
-        gap: 10px; /* Reduce space between links */
-        padding: 10px 0; /* Adjust padding */
+/* Navigation Bar Styling */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    text-align: center;
+    z-index: 1000;
+    transform: translateY(-100px);
+    animation: slideDown 1s ease-out forwards;
+}
+
+/* Nav List */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+/* Nav Items */
+nav ul li {
+    display: inline-block;
+    position: relative;
+}
+
+/* Nav Links */
+nav ul li a {
+    color: #64b5f6;
+    text-decoration: none;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+    position: relative;
+}
+
+/* Animated Underline Effect */
+nav ul li a::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -5px;
+    width: 0;
+    height: 2px;
+    background-color: #64b5f6;
+    transition: width 0.4s ease, left 0.4s ease;
+}
+
+/* On Hover, Expand Underline */
+nav ul li a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* On Hover, Change Text Color */
+nav ul li a:hover {
+    color: #ffffff;
+}
+
+/* Page padding to avoid content hiding behind navbar */
+body {
+    padding-top: 70px;
+}
+
+/* Navigation Animation */
+@keyframes slideDown {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
     }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
 
     nav ul li {
         display: block;
@@ -283,6 +359,25 @@ body {
             opacity: 1;
             transform: translateY(0);
         }
+
+        @media screen and (max-width: 768px) {
+    nav ul {
+        flex-wrap: wrap; /* Allow items to wrap instead of overflowing */
+        gap: 20px; /* Adjust spacing */
+        padding: 10px; /* Adjust padding for better spacing */
+    }
+
+    nav ul li {
+        display: inline-block;
+        width: auto; /* Prevents stretching */
+    }
+
+    nav ul li a {
+        font-size: 1em; /* Slightly reduce font size */
+        padding: 8px; /* Adjust padding */
+    }
+}
+
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
